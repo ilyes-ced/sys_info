@@ -1,17 +1,28 @@
 #include <stdio.h>
+#include <sys/syscall.h>
+
+
 
 int main(int argc, char const *argv[]) {
+    long long test_long = 0xb00;
+    int my_dude = 0x123456789;
+    char string[] = "hello thereé";
 
 
+    int gg = sys_function();
 
-    int hello_there0 = 0;
-    int helloa_there1 = 1;
-    int hello_there2 = 2;
-    int hello_there3 = 3;
+    return teeeeeeeeeeeeeeest(0xaaaaaaaaaaaaaaaaa, 0xbbbbbbbbbbbbbbbb);
+}
 
 
-    printf("Hello World!\n");
-    
-    
+int teeeeeeeeeeeeeeest(int vv, int bb){
+    while (vv){
+        vv--;
+    }
+    int ggggggg = vv+bb;
+    return vv*5;
+}
+int sys_function(){
+    syscall(SYS_write, 1, "done\n", 1);
     return 0;
 }
