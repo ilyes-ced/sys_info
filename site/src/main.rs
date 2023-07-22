@@ -2,28 +2,6 @@ use yew::prelude::*;
 
 
 
-
-
-
-#[derive(Properties, PartialEq)]
-pub struct AlertProps {
-    pub children: Children,
-    #[prop_or_default]
-    pub class: Classes,
-}
-
-#[function_component(Alert)]
-pub fn alert(props: &AlertProps) -> Html {
-    html! {
-        <div class={classes!("alert",props.class.clone())}>
-        {for props.children.iter()}
-        </div>
-    }
-}
-
-
-
-
 #[function_component]
 fn App() -> Html {
 	let counter = use_state(|| 0);
@@ -35,18 +13,8 @@ fn App() -> Html {
 		}
 	};
 
-	let AlertProps = AlertProps {
-		children: ,
-		class: "Smith".to_owned(),
-	};
 	html! {
 		<div>
-			<alert ..AlertProps.clone() />
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
 			<div class={classes!("overflow-x-auto")}>
 			  <table class={classes!("table")}>
 				<thead>
