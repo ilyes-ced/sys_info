@@ -1,6 +1,6 @@
 //#[cfg(any(target_os = "linux"))]
 use sysinfo::{NetworkExt, NetworksExt, ProcessExt, System, SystemExt};
-
+mod system;
 
 fn main() {
 	
@@ -61,8 +61,8 @@ fn main() {
 	println!("NB CPUs: {}", sys.cpus().len());
 
 	// Display processes ID, name na disk usage:
-	for (pid, process) in sys.processes() {
-	    println!("[{}] {} {:?}", pid, process.name(), process.disk_usage());
-	}
+	//for (pid, process) in sys.processes() {
+	//    println!("[{}] {} {:?}", pid, process.name(), process.disk_usage());
+	//}
 	
 }

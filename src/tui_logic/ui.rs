@@ -1,7 +1,7 @@
 use super::app::App;
 use tui::{
     backend::Backend,
-    layout::{Constraint, Direction, Layout, Rect},
+    layout::{Constraint, Direction, Layout, Rect, Alignment},
     style::{Color, Modifier, Style},
     symbols,
     text::{Span, Spans},
@@ -43,9 +43,9 @@ where
     let chunks = Layout::default()
         .constraints(
             [
-                Constraint::Length(9),
-                Constraint::Min(8),
-                Constraint::Length(7),
+                Constraint::Ratio(1, 3),
+                Constraint::Ratio(1, 3),
+                Constraint::Ratio(1, 3),
             ]
             .as_ref(),
         )
@@ -64,7 +64,8 @@ where
             [
                 Constraint::Length(2),
                 Constraint::Length(3),
-                Constraint::Length(1),
+                Constraint::Length(2),
+                Constraint::Length(2),
             ]
             .as_ref(),
         )
@@ -98,7 +99,7 @@ where
     f.render_widget(sparkline, chunks[1]);
 
     let line_gauge = LineGauge::default()
-        .block(Block::default().title("LineGauge:"))
+        .block(Block::default().title("CPU0: ").title_alignment(Alignment::Center))
         .gauge_style(Style::default().fg(Color::Magenta))
         .line_set(if app.enhanced_graphics {
             symbols::line::THICK
@@ -107,6 +108,17 @@ where
         })
         .ratio(app.progress);
     f.render_widget(line_gauge, chunks[2]);
+
+    let line_gauge2 = LineGauge::default()
+        .block(Block::default().title("CPU1: ").title_alignment(Alignment::Center))
+        .gauge_style(Style::default().fg(Color::Magenta))
+        .line_set(if app.enhanced_graphics {
+            symbols::line::THICK
+        } else {
+            symbols::line::NORMAL
+        })
+        .ratio(app.progress);
+    f.render_widget(line_gauge2, chunks[3]);
 }
 
 fn draw_charts<B>(f: &mut Frame<B>, app: &mut App, area: Rect)
