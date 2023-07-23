@@ -23,3 +23,7 @@ path = "src/tui.rs"
 [dependencies]
 actix-web = "4.3.1"
 sysinfo = "0.29.6"
+tui = "0.19"
+crossterm = "0.26.1"
+rand = "0.8"
+argh = "0.1"

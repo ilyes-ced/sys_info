@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 devDependencies:
+  '@skeletonlabs/skeleton':
+    specifier: ^1.10.0
+    version: 1.10.0(svelte@4.0.5)
   '@sveltejs/vite-plugin-svelte':
     specifier: ^2.4.2
     version: 2.4.2(svelte@4.0.5)(vite@4.4.5)
@@ -307,6 +310,15 @@ packages:
       fastq: 1.15.0
     dev: true
 
+  /@skeletonlabs/skeleton@1.10.0(svelte@4.0.5):
+    resolution: {integrity: sha512-6Cy1dzF6b2tMGxjFe60WOulN53tfvWMH+SDYoPMzNsRoa20vjlBMjLInWPJGn4dMuSJMiDrR9apniv16m0c9Rg==}
+    peerDependencies:
+      svelte: ^3.56.0 || ^4.0.0
+    dependencies:
+      esm-env: 1.0.0
+      svelte: 4.0.5
+    dev: true
+
   /@sveltejs/vite-plugin-svelte-inspector@1.0.3(@sveltejs/vite-plugin-svelte@2.4.2)(svelte@4.0.5)(vite@4.4.5):
     resolution: {integrity: sha512-Khdl5jmmPN6SUsVuqSXatKpQTMIifoQPDanaxC84m9JxIibWvSABJyHpyys0Z+1yYrxY5TTEQm+6elh0XCMaOA==}
     engines: {node: ^14.18.0 || >= 16}
@@ -605,6 +617,10 @@ packages:
   /escalade@3.1.1:
     resolution: {integrity: sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw==}
     engines: {node: '>=6'}
+    dev: true
+
+  /esm-env@1.0.0:
+    resolution: {integrity: sha512-Cf6VksWPsTuW01vU9Mk/3vRue91Zevka5SjyNf3nEpokFRuqt/KjUQoGAwq9qMmhpLTHmXzSIrFRw8zxWzmFBA==}
     dev: true
 
   /estree-walker@3.0.3:

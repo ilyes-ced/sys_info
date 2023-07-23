@@ -2,7 +2,6 @@
 use sysinfo::{NetworkExt, NetworksExt, ProcessExt, System, SystemExt};
 
 
-
 fn main() {
 	
 	let machine_kind = if cfg!(target_os = "linux") {
@@ -18,7 +17,7 @@ fn main() {
 	
 	println!("machine type  : {}", machine_kind);
 	
-	
+
 	// Please note that we use "new_all" to ensure that all list of
 	// components, network interfaces, disks and users are already
 	// filled!
