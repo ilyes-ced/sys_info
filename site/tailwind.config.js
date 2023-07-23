@@ -1,14 +1,9 @@
-module.exports = {
-    purge: {
-        mode: "all",
-        content: [
-            "./src/**/*.rs",
-            "./index.html",
-            "./src/**/*.html",
-            "./src/**/*.css",
-        ],
-    },
-    theme: {},
-    variants: {},
-    plugins: [],
-};
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./src/**/*.{html,js,svelte,ts}'],
+  theme: {
+    extend: {},
+  },
+  plugins: [require("daisyui")],
+}
+
