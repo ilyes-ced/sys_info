@@ -1,4 +1,4 @@
-pub struct User{
+pub struct User {
     uid: u32,
     gid: u32,
     name: String,

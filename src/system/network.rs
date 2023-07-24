@@ -1,3 +1,4 @@
+use std::collections::HashMap;
 
 pub struct Network {
     recv_bytes: u64,
@@ -15,5 +16,6 @@ pub struct Network {
     old_sent_errors: u64,
     pub(crate) mac_addr: [u8; 6],
     updated: bool,
-
 }
+
+pub struct Networks(pub HashMap<String, Network>);

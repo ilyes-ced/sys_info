@@ -1,5 +1,5 @@
-mod tui_logic;
 mod system;
+mod tui_logic;
 
 fn main() {
     //let output = Command::new("neofetch").output();
@@ -13,10 +13,12 @@ fn main() {
     //}
     //let gg = tui_logic::main::main().unwrap();
 
-
     // todo: match
     //let result = system::memory::get_memory_data().unwrap();
     //println!("{:#?}", result);
 
-
+    let mut m = system::memory::new();
+    println!("{:#?}", m);
+    m.set_memory_data();
+    println!("{:#?}", m);
 }

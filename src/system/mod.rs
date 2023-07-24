@@ -1,5 +1,3 @@
-use std::collections::HashMap;
-
 pub mod cpu;
 pub mod disk;
 pub mod memory;
@@ -9,14 +7,11 @@ pub mod user;
 pub mod utils;
 
 use cpu::Cpu;
-use user::User;
 use disk::Disk;
 use memory::Memory;
+use network::Networks;
 use process::Process;
-use network::Network;
-
-
-
+use user::User;
 
 // not needed probably
 enum ComponentType {
@@ -45,7 +40,7 @@ pub struct System {
     memory: Memory,
     components: Vec<Component>,
     disks: Vec<Disk>,
-    networks: HashMap<String, Network>,
+    networks: Networks,
     users: Vec<User>,
     cpus: Cpu,
 }

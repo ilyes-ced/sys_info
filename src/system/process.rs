@@ -1,6 +1,5 @@
 use std::path::PathBuf;
 
-
 pub enum ProcessStatus {
     Idle,
     Run,
@@ -16,7 +15,6 @@ pub enum ProcessStatus {
     /// Unknown.
     Unknown(u32),
 }
-
 
 pub struct Process {
     name: String,

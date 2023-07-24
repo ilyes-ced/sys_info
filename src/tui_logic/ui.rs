@@ -1,7 +1,7 @@
 use super::app::App;
 use tui::{
     backend::Backend,
-    layout::{Constraint, Direction, Layout, Rect, Alignment},
+    layout::{Alignment, Constraint, Direction, Layout, Rect},
     style::{Color, Modifier, Style},
     symbols,
     text::{Span, Spans},
@@ -99,7 +99,11 @@ where
     f.render_widget(sparkline, chunks[1]);
 
     let line_gauge = LineGauge::default()
-        .block(Block::default().title("CPU0: ").title_alignment(Alignment::Center))
+        .block(
+            Block::default()
+                .title("CPU0: ")
+                .title_alignment(Alignment::Center),
+        )
         .gauge_style(Style::default().fg(Color::Magenta))
         .line_set(if app.enhanced_graphics {
             symbols::line::THICK
@@ -110,7 +114,11 @@ where
     f.render_widget(line_gauge, chunks[2]);
 
     let line_gauge2 = LineGauge::default()
-        .block(Block::default().title("CPU1: ").title_alignment(Alignment::Center))
+        .block(
+            Block::default()
+                .title("CPU1: ")
+                .title_alignment(Alignment::Center),
+        )
         .gauge_style(Style::default().fg(Color::Magenta))
         .line_set(if app.enhanced_graphics {
             symbols::line::THICK
