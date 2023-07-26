@@ -1,5 +1,5 @@
 use super::utils::read_file;
-use std::{path::Path};
+use std::path::Path;
 
 #[derive(Debug)]
 pub struct Memory {
@@ -29,7 +29,7 @@ pub fn new() -> Memory {
 }
 
 impl Memory {
-    pub fn set_memory_data(&mut self) {
+    pub fn get_memory_data(&mut self) {
         let memory = match read_file(Path::new("/proc/meminfo")) {
             Ok(result) => result,
             Err(_) => {
@@ -47,15 +47,15 @@ impl Memory {
 
             let info: Vec<&str> = line.split(":").collect();
             match info[0] {
-                "MemTotal" => self.mem_total = size_string(info[1]),
-                "MemFree" => self.mem_free = size_string(info[1]),
-                "MemAvailable" => self.mem_available = size_string(info[1]),
-                "Buffers" => self.mem_buffers = size_string(info[1]),
-                "Cached" => self.mem_page_cache = size_string(info[1]),
-                "Shmem" => self.mem_shmem = size_string(info[1]),
-                "SReclaimable" => self.mem_slab_reclaimable = size_string(info[1]),
-                "SwapTotal" => self.swap_total = size_string(info[1]),
-                "SwapFree" => self.swap_free = size_string(info[1]),
+                "MemTotal" => self.mem_total = size_string(info[1]) * 1024,
+                "MemFree" => self.mem_free = size_string(info[1]) * 1024,
+                "MemAvailable" => self.mem_available = size_string(info[1]) * 1024,
+                "Buffers" => self.mem_buffers = size_string(info[1]) * 1024,
+                "Cached" => self.mem_page_cache = size_string(info[1]) * 1024,
+                "Shmem" => self.mem_shmem = size_string(info[1]) * 1024,
+                "SReclaimable" => self.mem_slab_reclaimable = size_string(info[1]) * 1024,
+                "SwapTotal" => self.swap_total = size_string(info[1]) * 1024,
+                "SwapFree" => self.swap_free = size_string(info[1]) * 1024,
                 _ => {}
             }
         }

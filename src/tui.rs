@@ -19,6 +19,6 @@ fn main() {
 
     let mut m = system::memory::new();
     println!("{:#?}", m);
-    m.set_memory_data();
+    m.get_memory_data();
     println!("{:#?}", m);
 }

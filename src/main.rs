@@ -1,5 +1,5 @@
 //#[cfg(any(target_os = "linux"))]
-use sysinfo::{NetworkExt, NetworksExt, ProcessExt, System, SystemExt};
+use sysinfo::{NetworkExt, ProcessExt, System, SystemExt};
 mod system;
 
 fn main() {
