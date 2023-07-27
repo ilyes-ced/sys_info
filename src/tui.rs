@@ -17,8 +17,17 @@ fn main() {
     //let result = system::memory::get_memory_data().unwrap();
     //println!("{:#?}", result);
 
-    let mut m = system::memory::new();
-    println!("{:#?}", m);
-    m.get_memory_data();
-    println!("{:#?}", m);
+
+
+    //memory
+    //let mut mem = system::memory::new();
+    //println!("{:#?}", mem);
+    //mem.get_memory_data();
+    //println!("{:#?}", mem);
+
+
+
+    //users
+    let mut users = system::user::get_users();
+
 }

@@ -41,28 +41,27 @@ impl Memory {
         let lines = memory.split("\n");
 
         for line in lines {
-            if line == "" {
-                break;
-            }
+            if line == "" {break}
 
             let info: Vec<&str> = line.split(":").collect();
             match info[0] {
-                "MemTotal" => self.mem_total = size_string(info[1]) * 1024,
-                "MemFree" => self.mem_free = size_string(info[1]) * 1024,
-                "MemAvailable" => self.mem_available = size_string(info[1]) * 1024,
-                "Buffers" => self.mem_buffers = size_string(info[1]) * 1024,
-                "Cached" => self.mem_page_cache = size_string(info[1]) * 1024,
-                "Shmem" => self.mem_shmem = size_string(info[1]) * 1024,
-                "SReclaimable" => self.mem_slab_reclaimable = size_string(info[1]) * 1024,
-                "SwapTotal" => self.swap_total = size_string(info[1]) * 1024,
-                "SwapFree" => self.swap_free = size_string(info[1]) * 1024,
+                "MemTotal" => self.mem_total = size_string(info[1]),
+                "MemFree" => self.mem_free = size_string(info[1]),
+                "MemAvailable" => self.mem_available = size_string(info[1]),
+                "Buffers" => self.mem_buffers = size_string(info[1]),
+                "Cached" => self.mem_page_cache = size_string(info[1]),
+                "Shmem" => self.mem_shmem = size_string(info[1]),
+                "SReclaimable" => self.mem_slab_reclaimable = size_string(info[1]),
+                "SwapTotal" => self.swap_total = size_string(info[1]),
+                "SwapFree" => self.swap_free = size_string(info[1]),
                 _ => {}
             }
         }
     }
 }
 
+// given 2000 KB => returns 2000 & changed KB to B
 fn size_string(str: &str) -> u64 {
     let string: Vec<&str> = str.trim().split(" ").collect();
-    string[0].parse::<u64>().unwrap()
+    string[0].parse::<u64>().unwrap() * 1024
 }

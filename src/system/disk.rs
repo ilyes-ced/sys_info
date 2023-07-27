@@ -3,9 +3,7 @@ use std::{ffi::OsString, path::PathBuf};
 pub enum DiskType {
     HDD,
     SSD,
-    NVME,
-    PCIe,
-    Unknown,
+    UNKNOWN,
 }
 
 pub struct Disk {

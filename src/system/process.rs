@@ -17,9 +17,9 @@ pub enum ProcessStatus {
 }
 
 pub struct Process {
+    pid: u64,
     name: String,
     cmd: Vec<String>,
     exe: PathBuf,
-    pid: u64,
     parent: Option<u64>,
 }
