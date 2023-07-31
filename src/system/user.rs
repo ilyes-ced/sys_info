@@ -10,9 +10,6 @@ pub struct User {
     groups: Vec<String>,
 }
 
-
-
-
 pub fn get_users() -> Result<Vec<User>, ()> {
 
     let mut users: Vec<User> = Vec::new();
@@ -24,10 +21,10 @@ pub fn get_users() -> Result<Vec<User>, ()> {
         Err(_) => return Err(())
     };
 
-    let users_lines = string.split("\n");
+    let lines = string.split("\n");
 
     // root:x:0:0::/root:/bin/bash
-    for user in users_lines {
+    for user in lines {
         if user == "" {break}
         let mut user_data = user.split(":");
         let username = user_data.next().unwrap();

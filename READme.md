@@ -13,6 +13,7 @@ all data: /proc/meminfo
 
 ### cpu
 | data        | file           |
+|:-------------:|:-------------:|
 |   cpu performance    | /proc/stat  |
 |   cpu info    | /proc/cpuinfo  |
 
@@ -34,5 +35,6 @@ all data: /proc/meminfo
 
 ### user
 | data        | file           |
+|:-------------:|:-------------:|
 | all users   |  /etc/passwd |
 

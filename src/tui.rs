@@ -19,7 +19,7 @@ fn main() {
 
 
 
-    //memory
+    // memory
     //let mut mem = system::memory::new();
     //println!("{:#?}", mem);
     //mem.get_memory_data();
@@ -27,7 +27,11 @@ fn main() {
 
 
 
-    //users
-    let mut users = system::user::get_users();
+    // users
+    //let mut users = system::user::get_users();
+
+    
+    // disks
+    let mut disks = system::disk::get_disks();
 
 }
